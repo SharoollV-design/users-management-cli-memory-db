@@ -1,5 +1,6 @@
 package com.jcaa.udec.collections.domain.core.model;
 
+import com.jcaa.udec.collections.domain.core.valueobject.Ponderacion;
 import java.time.LocalDate;
 
 public class Examen {
@@ -7,9 +8,9 @@ public class Examen {
     private String titulo;
     private String subjectCode; // Código de la asignatura a la que pertenece
     private LocalDate fecha;
-    private double ponderacion; // Porcentaje de la nota final (ej. 30.0)
+    private com.jcaa.udec.collections.domain.core.valueobject.Ponderacion ponderacion; // Porcentaje de la nota final (ej. 30.0)
 
-    public Examen(String id, String titulo, String subjectCode, LocalDate fecha, double ponderacion) {
+    public Examen(String id, String titulo, String subjectCode, LocalDate fecha, Ponderacion ponderacion) {
         this.id = id;
         this.titulo = titulo;
         this.subjectCode = subjectCode;
@@ -34,6 +35,6 @@ public class Examen {
     }
 
     public double getPonderacion() {
-        return ponderacion;
+        return ponderacion.getValor();
     }
 }
